@@ -35,8 +35,8 @@ class PlumServiceProvider implements ServiceProviderInterface
             }
 
             // Servers
-            foreach ($servers as $name => $array) {
-                $server = new Server($array['host'], $array['user'], $array['dir'], $array['port']);
+            foreach ($servers as $name => $s) {
+                $server = new Server($s['host'], $s['user'], $s['dir'], $s['password'], $s['port']);
                 $plum->addServer($name, $server);
             }
 
